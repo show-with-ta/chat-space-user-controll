@@ -1,0 +1,25 @@
+.Main
+  .Main__Header
+    .Main__Header__group
+      .Main__Header__group__name
+        = @group.name
+      .Main__Header__group__member
+        = @group.users.name
+    = link_to edit_group_path(@group), class: ".Main__Header__edit" do
+      Edit
+  .Main__Chat
+    = render @messages
+
+  .Main__Footer
+    .Main__Footer__form
+      = form_with model: [@group, @message], html: {class: "Main__Footer__form__content"}, local: true do |f|
+        = f.text_field :content, class: 'Main__Footer__form__content__input', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('far', 'image', class: 'input-box__image__icon')
+          = f.file_field :image, class: 'input-box__image__input'
+        = f.submit 'Send', class: 'Main__Footer__form__input'
+
+
+
+ 
+

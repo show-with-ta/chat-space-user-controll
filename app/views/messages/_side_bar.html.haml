@@ -1,0 +1,30 @@
+.Side
+  .Side__header
+    .Side__header__box
+      .Side__header__box__name
+        = current_user.name
+      .Side__header__box__icon
+        =link_to new_group_path(@group) do
+          = icon('fas', 'edit', class: "Side__icon--edit")
+        =link_to edit_user_path(current_user) do
+          = icon('fas', 'cog', class: "Side__icon--cog")
+  .Side__groups
+    .group-list
+      - current_user.groups.each do |group|
+        .group-box
+          = link_to group_messages_path(group) do
+            .group-name
+              = group.name
+            .group-message
+              = group.show_last_message
+
+
+
+/    .group-list
+/      .group-box
+/        .group-name techcamp
+/        .group-message まだメッセージがありません
+/      .group-list
+/      .group-box
+/        .group-name techcamp
+/        .group-message まだメッセージがありません
