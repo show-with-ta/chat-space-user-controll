@@ -1,4 +1,4 @@
-.Main__Chat__box
+.Main__Chat__box{data: {message: {id: message.id}}}
   .Main__Chat__box__data
     .Main__Chat__box__data__name
       = message.user.name
@@ -10,17 +10,3 @@
         = message.content
     = image_tag message.image.url, class: 'Main__Chat__box__message__content' if message.image.present?
 
-
-       
-/    .Main__Chat__box
-/      .Main__Chat__box__data
-/        .Main__Chat__box__data__name masa
-/        .Main__Chat__box__data__date 2019/11/20(Wed) 17:43:01
-/      .Main__Chat__box__message
-/        .Main__Chat__box__message__content おはよう
-/    .Main__Chat__box
-/      .Main__Chat__box__data
-/        .Main__Chat__box__data__name masa
-/        .Main__Chat__box__data__date 2019/11/20(Wed) 17:43:34
-/      .Main__Chat__box__message
-/        .Main__Chat__box__message__content 今日は夜から雨
