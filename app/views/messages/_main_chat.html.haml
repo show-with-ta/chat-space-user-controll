@@ -4,6 +4,7 @@
       .Main__Header__group__name
         = @group.name
       .Main__Header__group__members
+        Member: 
         - @group.users.each do |user|
           .member
             = user.name
